@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-auto-rows: 50%;
+  width: 100vw;
+  height: 90vh;
+}
+
+.grid{
+  margin: 10px;
+  padding: 10px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  box-shadow:  20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.rep{
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+.loading{
+  margin: auto;
+}
+.header{
+  display: flex;
+}
+.selector{
+  margin: auto;
+}
