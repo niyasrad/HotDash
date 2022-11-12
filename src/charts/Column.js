@@ -7,7 +7,7 @@ class Column extends Component {
         super(props);
         this.state = {
             series: [{
-                name: 'Inflation',
+                name: 'Countries',
                 data: []
             }],
             options: {
@@ -58,7 +58,7 @@ class Column extends Component {
                         }
                     },
                     tooltip: {
-                        enabled: true,
+                        enabled: false,
                     }
                 },
                 yaxis: {
@@ -77,7 +77,7 @@ class Column extends Component {
 
                 },
                 title: {
-                    text: 'Monthly Inflation in Argentina, 2002',
+                    text: 'Countries booking hotels',
                     floating: true,
                     offsetY: 330,
                     align: 'center',

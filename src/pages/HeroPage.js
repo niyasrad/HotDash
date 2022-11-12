@@ -15,10 +15,10 @@ export default class HeroPage extends Component {
       json: [],
       date: [{
         startDate: moment({
-          year: 2015, month: 6, day: 1
+          year: 2015, month: 6, day: 8
         }).toDate(),
         endDate: moment({
-          year: 2015, month: 6, day: 15
+          year: 2015, month: 6, day: 10
         }).toDate(),
         key: 'selection'
       }],
@@ -162,6 +162,23 @@ export default class HeroPage extends Component {
     console.log(this.state.date);
     return (
       <div className="screen">
+        <h1>HotDash</h1>
+        <h3>The hotel dashboard viewer. Scroll to select range.</h3>
+        
+        <div className="grid-wrapper">
+          <div className="grid" id='q'>
+            {!this.state.loading ? <TimeSeries yas={this.state.combine1} /> : <div className="rep"><img class="loading" src={loading}></img></div>}
+          </div>
+          <div className="grid" id='w'>
+            {!this.state.loading ? <Column yas={this.state.combine2} /> : <div className="rep"><img className="loading" src={loading}></img></div>}
+          </div>
+          <div className="grid" id='e'>
+            {!this.state.loading ? <Sparkline yas={this.state.combine3} /> : <div className="rep"><img className="loading" src={loading}></img></div>}
+          </div>
+          <div className="grid" id='r'>
+            {!this.state.loading ? <Sparkline yas={this.state.combine4} /> : <div className="rep"><img className="loading" src={loading}></img></div>}
+          </div>
+        </div>
         <div className='header'>
         <div className='selector'>
           <DateRange
@@ -192,21 +209,6 @@ export default class HeroPage extends Component {
             ranges={this.state.date}
           />
         </div>
-        </div>
-        
-        <div className="grid-wrapper">
-          <div className="grid" id='q'>
-            {!this.state.loading ? <TimeSeries yas={this.state.combine1} /> : <div className="rep"><img class="loading" src={loading}></img></div>}
-          </div>
-          <div className="grid" id='w'>
-            {!this.state.loading ? <Column yas={this.state.combine2} /> : <div className="rep"><img className="loading" src={loading}></img></div>}
-          </div>
-          <div className="grid" id='e'>
-            {!this.state.loading ? <Sparkline yas={this.state.combine3} /> : <div className="rep"><img className="loading" src={loading}></img></div>}
-          </div>
-          <div className="grid" id='r'>
-            {!this.state.loading ? <Sparkline yas={this.state.combine4} /> : <div className="rep"><img className="loading" src={loading}></img></div>}
-          </div>
         </div>
       </div>
 
