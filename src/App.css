@@ -39,6 +39,8 @@ h3{
 }
 .header{
   display: flex;
+  margin-bottom: 20%;
+  
 }
 .selector{
   margin: auto;

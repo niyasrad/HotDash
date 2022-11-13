@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Column from '../charts/Column';
 import Sparkline from '../charts/Sparkline';
 import TimeSeries from '../charts/TimeSeries'
-import moment, { defaultFormat } from 'moment';
+import moment from 'moment';
 import { DateRange } from 'react-date-range';
 import loading from '../assets/loading.gif'
 import 'react-date-range/dist/styles.css'; // main css file
@@ -163,22 +163,7 @@ export default class HeroPage extends Component {
     return (
       <div className="screen">
         <h1>HotDash</h1>
-        <h3>The hotel dashboard viewer. Scroll to select range.</h3>
-        
-        <div className="grid-wrapper">
-          <div className="grid" id='q'>
-            {!this.state.loading ? <TimeSeries yas={this.state.combine1} /> : <div className="rep"><img class="loading" src={loading}></img></div>}
-          </div>
-          <div className="grid" id='w'>
-            {!this.state.loading ? <Column yas={this.state.combine2} /> : <div className="rep"><img className="loading" src={loading}></img></div>}
-          </div>
-          <div className="grid" id='e'>
-            {!this.state.loading ? <Sparkline yas={this.state.combine3} /> : <div className="rep"><img className="loading" src={loading}></img></div>}
-          </div>
-          <div className="grid" id='r'>
-            {!this.state.loading ? <Sparkline yas={this.state.combine4} /> : <div className="rep"><img className="loading" src={loading}></img></div>}
-          </div>
-        </div>
+        <h3>The hotel dashboard viewer. Select a range and scroll to view the charts.</h3>
         <div className='header'>
         <div className='selector'>
           <DateRange
@@ -210,6 +195,21 @@ export default class HeroPage extends Component {
           />
         </div>
         </div>
+        <div className="grid-wrapper">
+          <div className="grid" id='q'>
+            {!this.state.loading ? <TimeSeries yas={this.state.combine1} /> : <div className="rep"><img class="loading" src={loading} alt="loading"></img></div>}
+          </div>
+          <div className="grid" id='w'>
+            {!this.state.loading ? <Column yas={this.state.combine2} /> : <div className="rep"><img className="loading" src={loading} alt="loading"></img></div>}
+          </div>
+          <div className="grid" id='e'>
+            {!this.state.loading ? <Sparkline yas={this.state.combine3} /> : <div className="rep"><img className="loading" src={loading} alt="loading"></img></div>}
+          </div>
+          <div className="grid" id='r'>
+            {!this.state.loading ? <Sparkline yas={this.state.combine4} /> : <div className="rep"><img className="loading" src={loading} alt="loading"></img></div>}
+          </div>
+        </div>
+        
       </div>
 
     )
